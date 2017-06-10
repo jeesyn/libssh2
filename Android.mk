@@ -57,3 +57,13 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= libssh2
 include $(BUILD_SHARED_LIBRARY)
 
+########################################
+# sftp_write
+include $(CLEAR_VARS)
+
+LOCAL_SHARED_LIBRARIES := libssh2
+LOCAL_C_INCLUDES := ${LOCAL_PATH}/include
+LOCAL_SRC_FILES := example/sftp_write.c
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE:= sftp_write
+include $(BUILD_EXECUTABLE)

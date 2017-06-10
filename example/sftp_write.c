@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
     const char *password="password";
     const char *loclfile="sftp_write.c";
     const char *sftppath="/tmp/TEST";
+    int port = 22;
     int rc;
     FILE *local;
     LIBSSH2_SFTP *sftp_session;
@@ -81,6 +82,9 @@ int main(int argc, char *argv[])
     if(argc > 5) {
         sftppath = argv[5];
     }
+    if(argc > 6) {
+        port = atoi(argv[6]);
+    }
 
     rc = libssh2_init (0);
     if (rc != 0) {
@@ -101,7 +105,7 @@ int main(int argc, char *argv[])
     sock = socket(AF_INET, SOCK_STREAM, 0);
 
     sin.sin_family = AF_INET;
-    sin.sin_port = htons(22);
+    sin.sin_port = htons(port);
     sin.sin_addr.s_addr = hostaddr;
     if (connect(sock, (struct sockaddr*)(&sin),
             sizeof(struct sockaddr_in)) != 0) {
