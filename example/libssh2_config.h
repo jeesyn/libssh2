@@ -1,4 +1,4 @@
-/* example/libssh2_config.h.  Generated from libssh2_config.h.in by configure.  */
+/* src/libssh2_config.h.  Generated from libssh2_config.h.in by configure.  */
 /* src/libssh2_config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Define if building universal (internal helper macro) */
@@ -171,7 +171,7 @@
 #define LIBSSH2_HAVE_ZLIB 1
 
 /* Use libgcrypt */
-#define LIBSSH2_LIBGCRYPT 1
+/* #undef LIBSSH2_LIBGCRYPT */
 
 /* Enable "none" MAC -- NOT RECOMMENDED */
 /* #undef LIBSSH2_MAC_NONE */
@@ -180,7 +180,7 @@
 /* #undef LIBSSH2_MBEDTLS */
 
 /* Use openssl */
-/* #undef LIBSSH2_OPENSSL */
+#define LIBSSH2_OPENSSL
 
 /* Use wincng */
 /* #undef LIBSSH2_WINCNG */
